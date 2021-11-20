@@ -1,10 +1,11 @@
 # Rock, Paper, Scissors game with Python
 import random
+import sys
 
 
 def game_loop(game_ongoing=True, npc=0, player=0):
     while game_ongoing:
-        player_choice = input('Please select [1] Rock, [2] Scissors, and [3] Paper')
+        player_choice = input('Please select [1] Rock, [2] Scissors, and [3] Paper \n>')
 
         if player_choice == '1':
             print('Player selects ROCK')
@@ -40,10 +41,10 @@ def game_loop(game_ongoing=True, npc=0, player=0):
         print('Player score {} NPC score {}'.format(player, npc))
         if npc >= 3 and npc > player:
             print('NPC is the winner! You suck!')
-            break
+            sys.exit()
         elif player >= 3 and player > npc:
             print('Hey you finally won!')
-            break
+            sys.exit()
 
 
 game_loop(True, 0, 0)
